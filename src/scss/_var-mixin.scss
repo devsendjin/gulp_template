@@ -1,0 +1,106 @@
+/*------------------------------------------ VARIABLES ------------------------------------------*/
+/*---------------------- default ----------------------*/
+$text: #333;
+$default-bg: #fdaf07;
+$default-font-size: 16px;
+
+/*------------------ fonts ------------------*/
+$ff-awes: 'Fontawesome', Arial, sans-serif;
+$ff-geor: 'Georgia', Arial, sans-serif;
+$ff-helv: 'HelveticaNeue', Arial, sans-serif;
+
+/*------------------ colors ------------------*/
+$accent: #de2b24;
+
+$h-top: #f0f2f4;
+$f-top: #2a2a2a;
+$f-bottom: #515151;
+$bg-gray: #f3f3f3;
+
+$text-gray: #424242;
+$bg-blue: #1287bf;
+
+$btn-yellow: #f8cd53;
+
+/*------------------------------------------ MIXINS ------------------------------------------*/
+
+/*------------------ MEDIA QUERIES ------------------*/
+@mixin desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin link($color: #fff) {
+  color: $color;
+  text-decoration: none;
+}
+
+/*------------------ FONT ------------------*/
+@mixin font($font, $size, $color: false) {
+  @if $font != false {
+    font-family: $font;
+  }
+  @if $size != false {
+    font-size: $size;
+  }
+  @if $color != false {
+    color: $color;
+  }
+}
+
+/*------------------ CENTERING ------------------*/
+@mixin center($axis: 'xy') {
+  position: absolute;
+
+  @if $axis == 'xy' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $axis == 'y' {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if $axis == 'x' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/*------------------ FONT-FACE ------------------*/
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: optional;
+
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+         url('#{$file-path}.woff') format('woff'),
+         url('#{$file-path}.woff2') format('woff2'),
+         url('#{$file-path}.ttf') format('truetype');
+  }
+}
+/*---------------------------------------------------- FUNCTIONS ----------------------------------------------------*/
+/*------------------ PX to REM ------------------*/
+@function rem($size) {
+  $remSize: $size / $default-font-size;
+  @return #{$remSize}rem;
+}

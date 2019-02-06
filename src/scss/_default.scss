@@ -1,0 +1,58 @@
+html,
+body {
+	font-size: $default-font-size;
+	
+	@include desktop {
+		font-size: 15px;
+	}
+	
+	@include laptop {
+		font-size: 14px;
+	}
+	
+	@include tablets {
+		font-size: 13px;
+	}
+}
+
+body {
+	min-width: 320px;
+	position: relative;
+	// line-height: 1.65;
+	line-height: normal;
+	font-family: $ff-helv;
+	overflow-x: hidden;
+	color: $text;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	input,
+	textarea {
+		border: 1px solid #666;
+		outline: none;
+		&:focus:required:invalid {
+			border-color: red;
+		}
+		&:required:valid {
+			border-color: green;
+		}
+	}
+}
+
+::placeholder {
+	color: #666;
+}
+
+::selection {
+	background-color: #1287bf;
+	color: #fff;
+}
+
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.visually-hidden {
+	text-indent: -9999px;
+	font-size: 0;
+}

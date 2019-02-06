@@ -1,0 +1,16 @@
+body {
+  background: #f8d353;
+  background: -webkit-linear-gradient(top, #f8d353, #ff5c5a);
+  background: -moz-linear-gradient(top, #f8d353, #ff5c5a);
+  background: linear-gradient(to bottom, #f8d353, #ff5c5a);
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 60px;
+  color: #005eff;
+}
