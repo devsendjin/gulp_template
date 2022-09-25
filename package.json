@@ -20,7 +20,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-csscomb": "^3.0.8",
     "gulp-imagemin": "8.0.0",
-    "gulp-load-plugins": "2.0.7",
+    "gulp-load-plugins": "2.0.8",
     "gulp-notify": "4.0.0",
     "gulp-pug": "5.0.0",
     "gulp-sass": "5.1.0",
